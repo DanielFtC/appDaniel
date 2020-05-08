@@ -120,6 +120,9 @@
                 app.VerUsuarios();
             },
             deleteEntry(id, index) {
+
+
+                
                 if (confirm("Do you really want to delete it?")) {
                     var app = this;
                     axios.delete('/api/administrativo/usuarios/' + id)
