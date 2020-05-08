@@ -1,0 +1,7 @@
+tabla de roles
+tabla de matriculador
+tabla de cobrador
+tabla de cursos
+tabla de areas
+tabla de modulos
+tabla de estado (activo , inactivo)

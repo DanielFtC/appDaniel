@@ -1,0 +1,82 @@
+public function up()
+    {
+        Schema::create('empresas', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('Nombre_Comercial',20);
+            $table->string('Razon_Social',20);
+            $table->string('Nombre_Representante',20);
+            $table->string('Apellido_Representante',20);
+            $table->bigInteger('ruc');
+            $table->integer('telefono');
+            $table->integer('celular');
+            $table->timestamps();
+
+             $table->bigInteger('user_id_plan')->unsigned();
+            $table->foreign('user_id_plan')->references('id')->on('users');
+        });
+    }
+
+
+
+    <?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Empresa extends Model
+{
+       /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+}
+
+
+start () {
+        this.$Progress.start()
+    },
+    set (num) {
+        this.$Progress.set(num)
+    },
+    increase (num) {
+        this.$Progress.increase(num)
+    },
+    decrease (num) {
+        this.$Progress.decrease(num)
+    },
+    finish () {
+        this.$Progress.finish()
+    },
+    fail () {
+        this.$Progress.fail()
+    },
+    test(){
+      this.$Progress.start()
+
+      this.$http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=7waqfqbprs7pajbz28mqf6vz')
+      .then((response) => {
+          this.$Progress.finish()
+      }, (response) => {
+          this.$Progress.fail()
+      })
+
+
+      @include('app.navbar')
+  @include('app.sidebar')
+  <div class="content-wrapper">
+    <section class="content">
+     <div class="container-fluid">
+     <br>
+     <router-view></router-view>
+     <vue-progress-bar></vue-progress-bar>
+     </div>
+    </section>
+  </div>
+  @include('app.footer')
+  <aside class="control-sidebar control-sidebar-dark">
+  </aside>
